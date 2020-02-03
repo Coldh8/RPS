@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+
+
+<script>
+
+let wins = 0;
+let draws = 0;
+let losses = 0;
+let i = 0;
+
+  function computerPlay(){
+    pcChoice = Math.floor(Math.random() * 4);
+    return pcChoice;
+  }
+
+  function round(playerSelection,computerSelection){
+    if (playerSelection == "rock"){
+      if (computerSelection == 1){
+
+        draws = draws + 1;
+        alert("Computer choose rock, you draw" + " " + wins + " " + "wins" + " " + draws + " " + "draws" + " " + losses + " " + "losses");
+        return draws;
+      }
+      else if (computerSelection == 2){
+
+        losses = losses +1 ;
+        alert("Computer choose paper, you lose" + " " + wins + " " + "wins" + " " + draws + " " + "draws" + " " + losses + " " + "losses");
+        return losses;
+      }
+      else if (computerSelection == 3){
+
+        wins = wins + 1;
+        alert("Computer choose scissor, you win" + " " + wins + " " + "wins" + " " + draws + " " + "draws" + " " + losses + " " + "losses");
+        return wins;
+      }
+
+    }
+    if (playerSelection == "paper"){
+      if (computerSelection == 1){
+        wins = wins + 1;
+        alert("Computer choose rock, you win" + " " + wins + " " + "wins" + " " + draws + " " + "draws" + " " + losses + " " + "losses");
+        return wins;
+
+      }
+      else if (computerSelection == 2){
+        draws = draws +1;
+        alert("Computer choose paper, you draw" + " " + wins + " " + "wins" + " " + draws + " " + "draws" + " " + losses + " " + "losses");
+        return draws;
+
+      }
+      else if (computerSelection == 3){
+        losses = losses + 1;
+        alert("Computer choose scissor, you lose" + " " + wins + " " + "wins" + " " + draws + " " + "draws" + " " + losses + " " + "losses");
+        return losses;
+
+      }
+
+    }
+
+    if (playerSelection == "scissor"){
+      if (computerSelection == 1){
+        losses = losses + 1;
+        alert("Computer choose rock, you lose" + " " + wins + " " + "wins" + " " + draws + " " + "draws" + " " + losses + " " + "losses");
+        return losses;
+
+      }
+      else if (computerSelection == 2){
+        wins = wins + 1;
+        alert("Computer choose paper, you win" + " " + wins + " " + "wins" + " " + draws + " " + "draws" + " " + losses + " " + "losses");
+        return wins;
+
+      }
+      else if (computerSelection == 3){
+        draws = draws + 1;
+        alert("Computer choose scissor, you draw" + " " + wins + " " + "wins" + " " + draws + " " + "draws" + " " + losses + " " + "losses");
+        return draws;
+
+      }
+
+    }
+
+}
+
+while (i < 6){
+  var myC = prompt("Type rock, paper or scissor");
+  computerPlay();
+  round(myC,pcChoice);
+  i = i + 1;
+
+}
+
+</script>
